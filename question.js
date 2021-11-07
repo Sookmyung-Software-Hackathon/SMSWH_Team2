@@ -3,7 +3,7 @@ for (let i = 0; i < 10; i++)
    visited[i] = false;
 
 function randomItem() {
-    while (cnt < 10) {
+    while (cnt <= 10) {
         var temp = Math.floor(Math.random() * 10);
         if (!visited[temp]) {
             visited[temp] = true;
@@ -108,7 +108,7 @@ function loadQuestion() {
     
     let msg = "";
     for (let i = 0; i < select[num].length; i++) { 
-        msg += `<button type='button' value='${value[num][i]}' onclick='score(event); loadQuestion(); (cnt==10)?result():""'>${select[num][i]}</button>`;
+        msg += `<button type='button' value='${value[num][i]}' onclick='score(event); loadQuestion()'>${select[num][i]}</button>`;
     }
     document.getElementsByClassName('selectBtn')[0].innerHTML = msg;
 }
